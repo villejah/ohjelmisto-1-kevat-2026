@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-tehtävät</title>
+</head>
+<body>
+
+    <h1>JavaScript-tehtävien tulokset</h1>
+
+    <script>
+        // --- TEHTÄVÄ 1: Konsoliin tulostus (1p) ---
+        console.log("I'm printing to console!");
+
+
+        // --- TEHTÄVÄ 2: Tervehdys (2p) ---
+        let nimi = prompt("Syötä nimesi:");
+        document.write("<p><strong>1. Tervehdys:</strong> Hello, " + nimi + "!</p>");
+
+
+        // --- TEHTÄVÄ 3: Matematiikka (3p) ---
+        // Muutetaan syötteet heti numeroiksi (Number tai parseInt)
+        let l1 = Number(prompt("Matematiikka - Anna 1. luku:"));
+        let l2 = Number(prompt("Matematiikka - Anna 2. luku:"));
+        let l3 = Number(prompt("Matematiikka - Anna 3. luku:"));
+
+        let summa = l1 + l2 + l3;
+        let tulo = l1 * l2 * l3;
+        let keskiarvo = summa / 3;
+
+        document.write("<p><strong>2. Matematiikka:</strong><br>");
+        document.write("Summa: " + summa + ", Tulo: " + tulo + ", Keskiarvo: " + keskiarvo.toFixed(2) + "</p>");
+
+
+        // --- TEHTÄVÄ 4: Lajitteluhattu (3p) ---
+        let oppilas = prompt("Lajitteluhattu - Anna nimesi:");
+        let arpa = Math.floor(Math.random() * 4) + 1;
+        let tupa = "";
+
+        if (arpa === 1) {
+            tupa = "Gryffindor";
+        } else if (arpa === 2) {
+            tupa = "Slytherin";
+        } else if (arpa === 3) {
+            tupa = "Hufflepuff";
+        } else {
+            tupa = "Ravenclaw";
+        }
+
+        document.write("<p><strong>3. Lajitteluhattu:</strong> " + oppilas + ", you are " + tupa + ".</p>");
+
+
+        // --- TEHTÄVÄ 5: Karkausvuosi (3p) ---
+        let vuosi = Number(prompt("Karkausvuosi - Syötä vuosi:"));
+        let karkaus = "";
+
+        if ((vuosi % 4 === 0 && vuosi % 100 !== 0) || (vuosi % 400 === 0)) {
+            karkaus = "on karkausvuosi.";
+        } else {
+            karkaus = "ei ole karkausvuosi.";
+        }
+
+        document.write("<p><strong>4. Karkausvuosi:</strong> Vuosi " + vuosi + " " + karkaus + "</p>");
+
+    </script>
+
+</body>
+</html>
