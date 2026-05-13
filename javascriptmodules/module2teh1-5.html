@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Taulukko-harjoitukset</title>
+</head>
+<body>
+
+    <h1>JavaScript-taulukko harjoitukset</h1>
+    <p>Katso osa vastauksista selaimen konsolista (F12 -> Console).</p>
+
+    <script>
+        // --- TEHTÄVÄ 1: Viisi lukua käänteisessä järjestyksessä (2p) ---
+        let luvut = [];
+        for (let i = 0; i < 5; i++) {
+            luvut.push(prompt("Tehtävä 1: Anna luku " + (i + 1) + "/5:"));
+        }
+        console.log("1. Luvut käänteisessä järjestyksessä:");
+        for (let i = luvut.length - 1; i >= 0; i--) {
+            console.log(luvut[i]);
+        }
+
+
+        // --- TEHTÄVÄ 2: Osallistujat aakkosjärjestyksessä (2p) ---
+        let maara = parseInt(prompt("Tehtävä 2: Kuinka monta osallistujaa?"));
+        let osallistujat = [];
+        for (let i = 0; i < maara; i++) {
+            osallistujat.push(prompt("Anna osallistujan " + (i + 1) + " nimi:"));
+        }
+        osallistujat.sort();
+        document.write("<h3>2. Osallistujat aakkosjärjestyksessä:</h3><ol>");
+        for (let nimi of osallistujat) {
+            document.write("<li>" + nimi + "</li>");
+        }
+        document.write("</ol>");
+
+
+        // --- TEHTÄVÄ 3: Kuusi koiraa käänteisessä aakkosjärjestyksessä (2p) ---
+        let koirat = [];
+        for (let i = 0; i < 6; i++) {
+            koirat.push(prompt("Tehtävä 3: Anna koiran " + (i + 1) + " nimi:"));
+        }
+        koirat.sort().reverse();
+        document.write("<h3>3. Koirat käänteisessä aakkosjärjestyksessä:</h3><ul>");
+        for (let koira of koirat) {
+            document.write("<li>" + koira + "</li>");
+        }
+        document.write("</ul>");
+
+
+        // --- TEHTÄVÄ 4: Luvut nollasta poikki ja järjestys (2p) ---
+        let numerot = [];
+        let syote;
+        while (true) {
+            syote = Number(prompt("Tehtävä 4: Syötä numero (0 lopettaa):"));
+            if (syote === 0) break;
+            numerot.push(syote);
+        }
+        numerot.sort((a, b) => b - a); // Suurimmasta pienimpään
+        console.log("4. Luvut suurimmasta pienimpään:");
+        numerot.forEach(n => console.log(n));
+
+
+        // --- TEHTÄVÄ 5: Saman luvun toisto lopettaa (2p) ---
+        let annetutLuvut = [];
+        while (true) {
+            let luku = Number(prompt("Tehtävä 5: Syötä numero:"));
+            if (annetutLuvut.includes(luku)) {
+                alert("The number " + luku + " has already been given.");
+                break;
+            }
+            annetutLuvut.push(luku);
+        }
+        annetutLuvut.sort((a, b) => a - b); // Pienimmästä suurimpaan
+        console.log("5. Kaikki annetut luvut nousevassa järjestyksessä:");
+        annetutLuvut.forEach(n => console.log(n));
+
+    </script>
+
+</body>
+</html>
